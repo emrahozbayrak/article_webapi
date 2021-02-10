@@ -8,6 +8,7 @@ namespace Article.Core.Services
 {
     public interface IArticleService : IService<Article.Core.Entities.Article>
     {
-        Task<IEnumerable<Article.Core.Entities.Article>> GetByTitle(string keyword);
+        Task<IEnumerable<Article.Core.Entities.Article>> GetByTitleAsync(string keyword);
+        Task<IEnumerable<Article.Core.Entities.Article>> GetByAuthorNameAsync(string authorName);
     }
 }

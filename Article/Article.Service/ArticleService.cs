@@ -21,9 +21,14 @@ namespace Article.Service
             _articleRepo = ArticleRepository;
         }
 
-        public async Task<IEnumerable<Core.Entities.Article>> GetByTitle(string keyword)
+        public async Task<IEnumerable<Core.Entities.Article>> GetByAuthorNameAsync(string authorName)
         {
-            return await _articleRepo.GetByTitle(keyword);
+            return await _articleRepo.GetByAuthorNameAsync(authorName);
+        }
+
+        public async Task<IEnumerable<Core.Entities.Article>> GetByTitleAsync(string keyword)
+        {
+            return await _articleRepo.GetByTitleAsync(keyword);
         }
     }
 }

@@ -18,7 +18,12 @@ namespace Article.Repository
             _context = Context;
         }
 
-        public async Task<IEnumerable<Core.Entities.Article>> GetByTitle(string keyword)
+        public async Task<IEnumerable<Core.Entities.Article>> GetByAuthorNameAsync(string authorName)
+        {
+            return await _context.Articles.Where(p => !p.IsDeleted && p.AuthorName.Contains(authorName)).ToListAsync();
+        }
+
+        public async Task<IEnumerable<Core.Entities.Article>> GetByTitleAsync(string keyword)
         {
             return await _context.Articles.Where(p => !p.IsDeleted && p.ArticleTitle.Contains(keyword)).ToListAsync();
         }

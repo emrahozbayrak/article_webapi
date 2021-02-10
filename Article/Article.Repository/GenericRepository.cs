@@ -73,6 +73,8 @@ namespace Article.Repository
         {
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
+
+            Entities.Update(entity);
             _context.SaveChanges();
         }
 
@@ -81,6 +83,7 @@ namespace Article.Repository
             if (entities == null)
                 throw new ArgumentNullException(nameof(entities));
 
+            Entities.UpdateRange(entities);
             _context.SaveChanges();
         }
 
