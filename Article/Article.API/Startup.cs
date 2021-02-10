@@ -1,7 +1,13 @@
+using Article.Core.Repositories;
+using Article.Core.Services;
+using Article.DataAccess;
+using Article.Repository;
+using Article.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,7 +31,17 @@ namespace Article.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddDbContext<ArticleDBContext>(conf =>
+            {
+                conf.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            });
+
+            services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
+
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IService<>), typeof(GenericService<>));
+            services.AddScoped(typeof(IArticleRepository), typeof(ArticleRepository));
+            services.AddScoped(typeof(IArticleService), typeof(ArticleService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
