@@ -31,5 +31,16 @@ namespace Article.Service
         {
             return new SuccessDataResult<IEnumerable<Core.Entities.Article>>(await _articleRepo.GetByTitleAsync(keyword));
         }
+
+        public IDataResult<IEnumerable<Core.Entities.Article>> GetWithComments()
+        {
+            return new SuccessDataResult<IEnumerable<Core.Entities.Article>>(_articleRepo.GetWithComments());
+        }
+
+        public IDataResult<Core.Entities.Article> GetWithCommentsById(long id)
+        {
+            return new SuccessDataResult<Core.Entities.Article>(_articleRepo.GetWithCommentsById(id));
+        }
+
     }
 }

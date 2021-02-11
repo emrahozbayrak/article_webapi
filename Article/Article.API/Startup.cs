@@ -36,12 +36,16 @@ namespace Article.API
                 conf.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
+            services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore)
+                .AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
+                
 
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IService<>), typeof(GenericService<>));
             services.AddScoped(typeof(IArticleRepository), typeof(ArticleRepository));
             services.AddScoped(typeof(IArticleService), typeof(ArticleService));
+            services.AddScoped(typeof(ICommentRepository), typeof(CommentRepository));
+            services.AddScoped(typeof(ICommentService), typeof(CommentService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -13,19 +13,29 @@ namespace Article.Repository
     {
         private readonly ArticleDBContext _context;
         public ArticleRepository(ArticleDBContext Context)
-            :base(Context)
+            : base(Context)
         {
             _context = Context;
         }
 
         public async Task<IEnumerable<Core.Entities.Article>> GetByAuthorNameAsync(string authorName)
         {
-            return await _context.Articles.Where(p =>  p.AuthorName.Contains(authorName)).ToListAsync();
+            return await _context.Articles.Where(p => p.AuthorName.Contains(authorName)).ToListAsync();
         }
 
         public async Task<IEnumerable<Core.Entities.Article>> GetByTitleAsync(string keyword)
         {
             return await _context.Articles.Where(p => p.ArticleTitle.Contains(keyword)).ToListAsync();
+        }
+
+        public IEnumerable<Core.Entities.Article> GetWithComments()
+        {
+            return _context.Articles.Include(i => i.Comments).ToList();
+        }
+
+        public Core.Entities.Article GetWithCommentsById(long id)
+        {
+            return _context.Articles.Include(i => i.Comments).FirstOrDefault(f => f.Id == id);
         }
     }
 }

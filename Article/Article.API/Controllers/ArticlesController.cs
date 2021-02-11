@@ -34,5 +34,19 @@ namespace Article.API.Controllers
         {
             return await _articleService.GetByTitleAsync(authorName);
         }
+
+        // Get Data with Comments
+        [HttpGet("getwithcomments")]
+        public IDataResult<IEnumerable<Article.Core.Entities.Article>> GetWithComments()
+        {
+            return _articleService.GetWithComments();
+        }
+
+        // Get Data By Id with Comments
+        [HttpGet("getwithcomments/{id}")]
+        public IDataResult<Article.Core.Entities.Article> GetWithCommentsById(long id)
+        {
+            return _articleService.GetWithCommentsById(id);
+        }
     }
 }
