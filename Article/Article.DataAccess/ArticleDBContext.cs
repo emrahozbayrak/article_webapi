@@ -1,5 +1,4 @@
 ﻿using System;
-using Article.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -19,7 +18,8 @@ namespace Article.DataAccess
         }
 
         public virtual DbSet<Article.Core.Entities.Article> Articles { get; set; }
-        public virtual DbSet<Comment> Comments { get; set; }
+        public virtual DbSet<Article.Core.Entities.Comment> Comments { get; set; }
+        public virtual DbSet<Article.Core.Entities.User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -47,7 +47,7 @@ namespace Article.DataAccess
                 entity.Property(e => e.UpdatedDate).HasColumnType("smalldatetime");
             });
 
-            modelBuilder.Entity<Comment>(entity =>
+            modelBuilder.Entity<Article.Core.Entities.Comment>(entity =>
             {
                 entity.ToTable("Comment");
 
@@ -64,6 +64,21 @@ namespace Article.DataAccess
                     .HasForeignKey(d => d.ArticleId)
                     .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_Comment_Article");
+            });
+
+            modelBuilder.Entity<Article.Core.Entities.User>(entity =>
+            {
+                entity.ToTable("User");
+
+                entity.Property(e => e.CreatedDate).HasColumnType("smalldatetime");
+
+                entity.Property(e => e.FirstName).HasMaxLength(50);
+
+                entity.Property(e => e.LastName).HasMaxLength(50);
+
+                entity.Property(e => e.UpdatedDate).HasColumnType("smalldatetime");
+
+                entity.Property(e => e.UserName).HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);
