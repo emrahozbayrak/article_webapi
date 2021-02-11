@@ -10,7 +10,7 @@ namespace Article.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ArticlesController : Controller
+    public class ArticlesController : ControllerBase
     {
         private readonly IArticleService _articleService;
 
@@ -19,7 +19,7 @@ namespace Article.API.Controllers
             _articleService = articleService;
         }
 
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
             var result = await _articleService.Table.Where(p => !p.IsDeleted).ToListAsync();
             if (result == null) return NotFound();
@@ -28,7 +28,7 @@ namespace Article.API.Controllers
         }
 
 
-        [HttpGet("{id:long}")]
+        [HttpGet("{id}")]
         public IActionResult GetById(long id)
         {
             var result = _articleService.GetById(id);
@@ -58,27 +58,27 @@ namespace Article.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateArticle(Article.Core.Entities.Article model)
+        public async Task<IActionResult> PostAsync(Article.Core.Entities.Article model)
         {
             model.CreatedDate = DateTime.Now;
 
             await _articleService.InsertAsync(model);
 
-            return Ok();
+            return CreatedAtAction("Get", model);
         }
 
         [HttpPut]
-        public IActionResult UpdateArticle(Article.Core.Entities.Article model)
+        public IActionResult Put(Article.Core.Entities.Article model)
         {
             model.UpdatedDate = DateTime.Now;
 
             _articleService.Update(model);
 
-            return Ok();
+            return NoContent();
         }
 
-        [HttpDelete("{id:long}")]
-        public IActionResult DeleteArticle(long id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(long id)
         {
             var article = _articleService.GetById(id);
             if (article == null) return NotFound();
@@ -86,7 +86,7 @@ namespace Article.API.Controllers
             article.IsDeleted = true;
             _articleService.Update(article);
 
-            return Ok();
+            return NoContent();
         }
     }
 }

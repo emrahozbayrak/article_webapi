@@ -3,13 +3,13 @@ D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\bin\Debug\netcoreapp3
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\bin\Debug\netcoreapp3.1\Article.DataAccess.runtimeconfig.dev.json
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\bin\Debug\netcoreapp3.1\Article.DataAccess.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\bin\Debug\netcoreapp3.1\Article.DataAccess.pdb
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\bin\Debug\netcoreapp3.1\Article.Core.dll
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\bin\Debug\netcoreapp3.1\Article.Core.pdb
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\obj\Debug\netcoreapp3.1\Article.DataAccess.csprojAssemblyReference.cache
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\obj\Debug\netcoreapp3.1\Article.DataAccess.AssemblyInfoInputs.cache
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\obj\Debug\netcoreapp3.1\Article.DataAccess.AssemblyInfo.cs
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\obj\Debug\netcoreapp3.1\Article.DataAccess.csproj.CoreCompileInputs.cache
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\obj\Debug\netcoreapp3.1\Article.DataAccess.csproj.CopyComplete
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\obj\Debug\netcoreapp3.1\Article.DataAccess.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\obj\Debug\netcoreapp3.1\Article.DataAccess.pdb
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\obj\Debug\netcoreapp3.1\Article.DataAccess.genruntimeconfig.cache
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\bin\Debug\netcoreapp3.1\Article.Core.dll
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\bin\Debug\netcoreapp3.1\Article.Core.pdb
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.DataAccess\obj\Debug\netcoreapp3.1\Article.DataAccess.csproj.CopyComplete
