@@ -6,3 +6,4 @@ D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Art
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Article.Core.csproj.CoreCompileInputs.cache
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Article.Core.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Article.Core.pdb
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Article.Core.csprojAssemblyReference.cache

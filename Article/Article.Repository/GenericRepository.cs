@@ -20,6 +20,11 @@ namespace Article.Repository
             _entities = _context.Set<T>();
         }
 
+        public async Task<IEnumerable<T>> GetAllAsync()
+        {
+            return await Entities.ToListAsync();
+        }
+
         public virtual T GetById(object id)
         {
             return Entities.Find(id);
@@ -35,7 +40,9 @@ namespace Article.Repository
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
 
-            _entities.Add(entity);
+            _context.Entry(entity).Property("CreatedDate").CurrentValue = DateTime.Now;
+
+            Entities.Add(entity);
             _context.SaveChanges();
         }
         public async Task InsertAsync(T entity)
@@ -43,7 +50,9 @@ namespace Article.Repository
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
 
-            await _entities.AddAsync(entity);
+            _context.Entry(entity).Property("CreatedDate").CurrentValue = DateTime.Now;
+
+            await Entities.AddAsync(entity);
             await _context.SaveChangesAsync();
         }
 
@@ -53,7 +62,10 @@ namespace Article.Repository
                 throw new ArgumentNullException(nameof(entities));
 
             foreach (var entity in entities)
+            {
+                _context.Entry(entity).Property("CreatedDate").CurrentValue = DateTime.Now;
                 await Entities.AddAsync(entity);
+            }
 
             await _context.SaveChangesAsync();
         }
@@ -64,7 +76,10 @@ namespace Article.Repository
                 throw new ArgumentNullException(nameof(entities));
 
             foreach (var entity in entities)
+            {
+                _context.Entry(entity).Property("CreatedDate").CurrentValue = DateTime.Now;
                 Entities.Add(entity);
+            }
 
             _context.SaveChanges();
         }
@@ -73,6 +88,8 @@ namespace Article.Repository
         {
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
+
+            _context.Entry(entity).Property("UpdatedDate").CurrentValue = DateTime.Now;
 
             Entities.Update(entity);
             _context.SaveChanges();
@@ -83,6 +100,10 @@ namespace Article.Repository
             if (entities == null)
                 throw new ArgumentNullException(nameof(entities));
 
+            foreach (var entity in entities)
+                _context.Entry(entity).Property("UpdatedDate").CurrentValue = DateTime.Now;
+
+
             Entities.UpdateRange(entities);
             _context.SaveChanges();
         }
@@ -91,6 +112,8 @@ namespace Article.Repository
         {
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
+
+
             Entities.Remove(entity);
             _context.SaveChanges();
         }
@@ -102,17 +125,18 @@ namespace Article.Repository
 
             foreach (var entity in entities)
                 Entities.Remove(entity);
+
             _context.SaveChanges();
         }
-
-        public IEnumerable<T> GetSql(string sql)
+        public void Delete(object id)
         {
-            return Entities.FromSqlRaw(sql);
+            var data = Entities.Find(id);
+            if (data == null)
+                throw new ArgumentNullException(nameof(id));
+
+            Entities.Remove(data);
+            _context.SaveChanges();
         }
-
-        public virtual IQueryable<T> Table => Entities;
-
-        public virtual IQueryable<T> TableNoTracking => Entities.AsNoTracking();
 
         protected virtual DbSet<T> Entities => _entities ?? (_entities = _context.Set<T>());
     }

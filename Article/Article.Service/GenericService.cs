@@ -1,5 +1,6 @@
 ﻿using Article.Core.Repositories;
 using Article.Core.Services;
+using Article.Core.Utilities.Results;
 using Article.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -19,66 +20,85 @@ namespace Article.Service
             _context = Context;
             _repository = Repository;
         }
-        public IQueryable<T> Table => _repository.Table;
 
-        public IQueryable<T> TableNoTracking => _repository.TableNoTracking;
-
-        public void Delete(T entity)
+        public async Task<IDataResult<IEnumerable<T>>> GetAllAsync()
         {
-            _repository.Delete(entity);
-            _context.SaveChanges();
+            var data = await _repository.GetAllAsync();
+            if (data == null) return new ErrorDataResult<IEnumerable<T>>(null, Messages.ItemNotFound);
+
+            return new SuccessDataResult<IEnumerable<T>>(data, Messages.ItemListed);
         }
 
-        public void Delete(IEnumerable<T> entities)
+        public IDataResult<T> GetById(object id)
         {
-            _repository.Delete(entities);
-            _context.SaveChanges();
+            var data = _repository.GetById(id);
+            if(data == null) return new ErrorDataResult<T>(null,Messages.ItemNotFound);
+
+            return new SuccessDataResult<T>(_repository.GetById(id),Messages.ItemListed);
         }
 
-        public T GetById(object id)
-        {
-            return _repository.GetById(id);
-        }
-
-        public IEnumerable<T> GetSql(string sql)
-        {
-            return _repository.GetSql(sql);
-        }
-
-        public void Insert(T entity)
+        public IResult Insert(T entity)
         {
             _repository.Insert(entity);
-            _context.SaveChanges();
+
+            return new SuccessResult(Messages.ItemAdded);
         }
 
-        public void Insert(IEnumerable<T> entities)
+        public IResult Insert(IEnumerable<T> entities)
         {
             _repository.Insert(entities);
-            _context.SaveChanges();
+
+            return new SuccessResult(Messages.ItemAdded);
         }
 
-        public async Task InsertAsync(T entity)
+        public async Task<IResult> InsertAsync(T entity)
         {
             await _repository.InsertAsync(entity);
-            await _context.SaveChangesAsync();
+
+            return new SuccessResult(Messages.ItemAdded);
         }
 
-        public async Task InsertAsync(IEnumerable<T> entities)
+        public async Task<IResult> InsertAsync(IEnumerable<T> entities)
         {
             await _repository.InsertAsync(entities);
-            await _context.SaveChangesAsync();
+
+            return new SuccessResult(Messages.ItemAdded);
         }
 
-        public void Update(T entity)
+        public IResult Update(T entity)
         {
             _repository.Update(entity);
-            _context.SaveChanges();
+
+            return new SuccessResult(Messages.ItemUpdated);
         }
 
-        public void Update(IEnumerable<T> entities)
+        public IResult Update(IEnumerable<T> entities)
         {
             _repository.Update(entities);
-            _context.SaveChanges();
+
+            return new SuccessResult(Messages.ItemUpdated);
         }
+
+        public IResult Delete(T entity)
+        {
+            _repository.Delete(entity);
+
+            return new SuccessResult(Messages.ItemDeleted);
+        }
+
+        public IResult Delete(IEnumerable<T> entities)
+        {
+            _repository.Delete(entities);
+
+            return new SuccessResult(Messages.ItemDeleted);
+        }
+
+        public IResult Delete(object id)
+        {
+            _repository.Delete(id);
+
+            return new SuccessResult(Messages.ItemDeleted);
+        }
+
     }
 }

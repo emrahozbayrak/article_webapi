@@ -1,5 +1,6 @@
 ﻿using Article.Core.Repositories;
 using Article.Core.Services;
+using Article.Core.Utilities.Results;
 using Article.DataAccess;
 using System;
 using System.Collections.Generic;
@@ -15,20 +16,20 @@ namespace Article.Service
         private readonly IArticleRepository _articleRepo;
 
         public ArticleService(ArticleDBContext Context, IArticleRepository ArticleRepository)
-            :base(Context,ArticleRepository)
+            : base(Context, ArticleRepository)
         {
             _context = Context;
             _articleRepo = ArticleRepository;
         }
 
-        public async Task<IEnumerable<Core.Entities.Article>> GetByAuthorNameAsync(string authorName)
+        public async Task<IDataResult<IEnumerable<Core.Entities.Article>>> GetByAuthorNameAsync(string authorName)
         {
-            return await _articleRepo.GetByAuthorNameAsync(authorName);
+            return new SuccessDataResult<IEnumerable<Core.Entities.Article>>(await _articleRepo.GetByAuthorNameAsync(authorName));
         }
 
-        public async Task<IEnumerable<Core.Entities.Article>> GetByTitleAsync(string keyword)
+        public async Task<IDataResult<IEnumerable<Core.Entities.Article>>> GetByTitleAsync(string keyword)
         {
-            return await _articleRepo.GetByTitleAsync(keyword);
+            return new SuccessDataResult<IEnumerable<Core.Entities.Article>>(await _articleRepo.GetByTitleAsync(keyword));
         }
     }
 }

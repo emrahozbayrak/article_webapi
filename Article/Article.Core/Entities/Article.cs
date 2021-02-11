@@ -16,9 +16,8 @@ namespace Article.Core.Entities
         public string AuthorName { get; set; }
         public string ArticleTitle { get; set; }
         public string ArticleContent { get; set; }
-        public DateTime? CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
-        public bool IsDeleted { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Article.Core.Utilities.Results;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,17 +9,16 @@ namespace Article.Core.Services
 {
     public interface IService<T> where T : class
     {
-        IQueryable<T> Table { get; }
-        IQueryable<T> TableNoTracking { get; }
-        T GetById(object id);
-        void Insert(T entity);
-        Task InsertAsync(T entity);
-        void Insert(IEnumerable<T> entities);
-        Task InsertAsync(IEnumerable<T> entities);
-        void Update(T entity);
-        void Update(IEnumerable<T> entities);
-        void Delete(T entity);
-        void Delete(IEnumerable<T> entities);
-        IEnumerable<T> GetSql(string sql);
+        Task<IDataResult<IEnumerable<T>>> GetAllAsync();
+        IDataResult<T> GetById(object id);
+        IResult Insert(T entity);
+        Task<IResult> InsertAsync(T entity);
+        IResult Insert(IEnumerable<T> entities);
+        Task<IResult> InsertAsync(IEnumerable<T> entities);
+        IResult Update(T entity);
+        IResult Update(IEnumerable<T> entities);
+        IResult Delete(object id);
+        IResult Delete(T entity);
+        IResult Delete(IEnumerable<T> entities);
     }
 }

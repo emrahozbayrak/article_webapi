@@ -20,12 +20,12 @@ namespace Article.Repository
 
         public async Task<IEnumerable<Core.Entities.Article>> GetByAuthorNameAsync(string authorName)
         {
-            return await _context.Articles.Where(p => !p.IsDeleted && p.AuthorName.Contains(authorName)).ToListAsync();
+            return await _context.Articles.Where(p =>  p.AuthorName.Contains(authorName)).ToListAsync();
         }
 
         public async Task<IEnumerable<Core.Entities.Article>> GetByTitleAsync(string keyword)
         {
-            return await _context.Articles.Where(p => !p.IsDeleted && p.ArticleTitle.Contains(keyword)).ToListAsync();
+            return await _context.Articles.Where(p => p.ArticleTitle.Contains(keyword)).ToListAsync();
         }
     }
 }

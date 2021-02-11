@@ -11,9 +11,8 @@ namespace Article.Core.Entities
         public long? ArticleId { get; set; }
         public string CommentContent { get; set; }
         public string CommentWriter { get; set; }
-        public DateTime? CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
-        public bool IsDeleted { get; set; }
 
         public virtual Article Article { get; set; }
     }

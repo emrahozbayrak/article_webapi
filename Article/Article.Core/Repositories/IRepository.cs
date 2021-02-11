@@ -8,19 +8,16 @@ namespace Article.Core.Repositories
 {
     public interface IRepository<T> where T : class
     {
-        IQueryable<T> Table { get; }
-        IQueryable<T> TableNoTracking { get; }
-
+        Task<IEnumerable<T>> GetAllAsync();
         T GetById(object id);
-        //Task<T> GetByIdAsync(object id);
         void Insert(T entity);
         Task InsertAsync(T entity);
         void Insert(IEnumerable<T> entities);
         Task InsertAsync(IEnumerable<T> entities);
         void Update(T entity);
         void Update(IEnumerable<T> entities);
+        void Delete(object id);
         void Delete(T entity);
         void Delete(IEnumerable<T> entities);
-        IEnumerable<T> GetSql(string sql);
     }
 }

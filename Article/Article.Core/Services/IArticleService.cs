@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Article.Core.Utilities.Results;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Article.Core.Services
 {
     public interface IArticleService : IService<Article.Core.Entities.Article>
     {
-        Task<IEnumerable<Article.Core.Entities.Article>> GetByTitleAsync(string keyword);
-        Task<IEnumerable<Article.Core.Entities.Article>> GetByAuthorNameAsync(string authorName);
+        Task<IDataResult<IEnumerable<Article.Core.Entities.Article>>> GetByTitleAsync(string keyword);
+        Task<IDataResult<IEnumerable<Article.Core.Entities.Article>>> GetByAuthorNameAsync(string authorName);
     }
 }
