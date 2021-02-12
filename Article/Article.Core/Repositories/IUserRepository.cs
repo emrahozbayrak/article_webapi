@@ -9,7 +9,7 @@ namespace Article.Core.Repositories
 {
     public interface IUserRepository : IRepository<Article.Core.Entities.User>
     {
-        Task<Article.Core.Entities.User> LoginAsync(AuthenticateRequest model);
+        Task<Article.Core.Entities.User> LoginAsync(AuthenticateUserModel model);
 
         bool UserNameExist(string username);
     }

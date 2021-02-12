@@ -20,7 +20,7 @@ namespace Article.Repository
             _context = Context;
         }
 
-        public async Task<User> LoginAsync(AuthenticateRequest model)
+        public async Task<User> LoginAsync(AuthenticateUserModel model)
         {
            return await _context.Users.FirstOrDefaultAsync(f => f.UserName == model.UserName);
         }

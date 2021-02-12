@@ -1,6 +1,7 @@
 ﻿using Article.Core.Services;
 using Article.Core.Utilities.Results;
 using Article.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Article.API.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ArticlesController : BaseController<Article.Core.Entities.Article>

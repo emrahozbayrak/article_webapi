@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Article.Core.Models
 {
-    public class AuthenticateRequest
+    public class AuthenticateUserModel
     {
         [Required]
         public string UserName { get; set; }

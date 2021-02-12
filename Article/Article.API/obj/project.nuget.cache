@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YPIZV2eCeVQ5bP4AnAhs3Y3rFe9fzCuiQpZEqhe3GQFSa/IJcqCuTZd2vIjkk7np7ZIbo2BMCt9QN1p7HNwWdg==",
+  "dgSpecHash": "o46pUFAA/8ZzKKtu88+N3LJKhD+NTP3mtVp//3swjhmWud9EJzbTuR4tMcDF5UX5jsCXqBx0zl4QRfL5u9PmXQ==",
   "success": true,
   "projectFilePath": "D:\\Çalışmalar\\WEB\\WebApiRepo\\Article\\Article.API\\Article.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LTS\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\LTS\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.12\\microsoft.aspnetcore.authentication.jwtbearer.3.1.12.nupkg.sha512",
     "C:\\Users\\LTS\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.12\\microsoft.aspnetcore.jsonpatch.3.1.12.nupkg.sha512",
     "C:\\Users\\LTS\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.12\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.12.nupkg.sha512",
     "C:\\Users\\LTS\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
