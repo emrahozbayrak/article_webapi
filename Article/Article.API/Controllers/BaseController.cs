@@ -92,6 +92,7 @@ namespace Article.API.Controllers
             return result;
         }
 
+        [ApiExplorerSettings(IgnoreApi = true)]
         public void RemoveCache(string key)
         {
             _memoryCache.Remove(key);
