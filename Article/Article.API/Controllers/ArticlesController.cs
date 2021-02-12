@@ -4,6 +4,7 @@ using Article.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,15 @@ namespace Article.API.Controllers
     {
         private readonly IArticleService _articleService;
         private readonly ILogger<ArticlesController> _logger;
+        private readonly IMemoryCache _memoryCache;
+        
 
-        public ArticlesController(IArticleService articleService, ILogger<ArticlesController> logger) : base(articleService, logger)
+        public ArticlesController(IArticleService articleService, ILogger<ArticlesController> logger,
+            IMemoryCache memoryCache) : base(articleService, logger,memoryCache)
         {
             _articleService = articleService;
             _logger = logger;
+            _memoryCache = memoryCache;
         }
 
         // Searching with Article Title
@@ -31,8 +36,8 @@ namespace Article.API.Controllers
         public async Task<IDataResult<IEnumerable<Article.Core.Entities.Article>>> GetAllByTitleAsync(string keyword)
         {
             var result = await _articleService.GetByTitleAsync(keyword);
-            _logger.LogInformation($"{nameof(Article)} Search by Title is success");
 
+            _logger.LogInformation($"{nameof(Article)} Search by Title is success");
             return result;
         }
 
@@ -41,8 +46,8 @@ namespace Article.API.Controllers
         public async Task<IDataResult<IEnumerable<Article.Core.Entities.Article>>> GetByAuthorAsync(string authorName)
         {
             var result = await _articleService.GetByTitleAsync(authorName);
-            _logger.LogInformation($"{nameof(Article)} Search by AuthorName is success");
 
+            _logger.LogInformation($"{nameof(Article)} Search by AuthorName is success");
             return result;
         }
 

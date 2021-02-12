@@ -23,6 +23,7 @@ namespace Article.API.Controllers
         public UsersController(IUserService userService, ILogger<UsersController> logger)
         {
             _userService = userService;
+            _logger = logger;
         }
 
         // /api/users/login

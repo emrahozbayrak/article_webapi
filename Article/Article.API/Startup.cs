@@ -87,6 +87,8 @@ namespace Article.API
                 };
             });
 
+            services.AddMemoryCache();
+
             services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         //.AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
         }
