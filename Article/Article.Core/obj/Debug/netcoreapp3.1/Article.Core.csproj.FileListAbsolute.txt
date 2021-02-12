@@ -1,9 +1,9 @@
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\bin\Debug\netcoreapp3.1\Article.Core.deps.json
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\bin\Debug\netcoreapp3.1\Article.Core.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\bin\Debug\netcoreapp3.1\Article.Core.pdb
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Article.Core.csprojAssemblyReference.cache
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Article.Core.AssemblyInfoInputs.cache
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Article.Core.AssemblyInfo.cs
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Article.Core.csproj.CoreCompileInputs.cache
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Article.Core.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Article.Core.pdb
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.Core\obj\Debug\netcoreapp3.1\Article.Core.csprojAssemblyReference.cache

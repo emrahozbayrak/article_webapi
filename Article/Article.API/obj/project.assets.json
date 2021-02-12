@@ -1491,6 +1491,19 @@
           "bin/placeholder/Article.DataAccess.dll": {}
         }
       },
+      "Article.Log/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Article.Log.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Article.Log.dll": {}
+        }
+      },
       "Article.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5580,6 +5593,11 @@
       "path": "../Article.DataAccess/Article.DataAccess.csproj",
       "msbuildProject": "../Article.DataAccess/Article.DataAccess.csproj"
     },
+    "Article.Log/1.0.0": {
+      "type": "project",
+      "path": "../Article.Log/Article.Log.csproj",
+      "msbuildProject": "../Article.Log/Article.Log.csproj"
+    },
     "Article.Repository/1.0.0": {
       "type": "project",
       "path": "../Article.Repository/Article.Repository.csproj",
@@ -5594,6 +5612,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Article.DataAccess >= 1.0.0",
+      "Article.Log >= 1.0.0",
       "Article.Repository >= 1.0.0",
       "Article.Service >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.12",
@@ -5646,6 +5665,9 @@
           "projectReferences": {
             "D:\\Çalışmalar\\WEB\\WebApiRepo\\Article\\Article.DataAccess\\Article.DataAccess.csproj": {
               "projectPath": "D:\\Çalışmalar\\WEB\\WebApiRepo\\Article\\Article.DataAccess\\Article.DataAccess.csproj"
+            },
+            "D:\\Çalışmalar\\WEB\\WebApiRepo\\Article\\Article.Log\\Article.Log.csproj": {
+              "projectPath": "D:\\Çalışmalar\\WEB\\WebApiRepo\\Article\\Article.Log\\Article.Log.csproj"
             },
             "D:\\Çalışmalar\\WEB\\WebApiRepo\\Article\\Article.Repository\\Article.Repository.csproj": {
               "projectPath": "D:\\Çalışmalar\\WEB\\WebApiRepo\\Article\\Article.Repository\\Article.Repository.csproj"

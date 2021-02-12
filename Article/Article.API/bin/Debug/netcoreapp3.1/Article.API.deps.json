@@ -25,6 +25,7 @@
       "Article.API/1.0.0": {
         "dependencies": {
           "Article.DataAccess": "1.0.0",
+          "Article.Log": "1.0.0",
           "Article.Repository": "1.0.0",
           "Article.Service": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.12",
@@ -1389,6 +1390,17 @@
         },
         "compile": {
           "Article.DataAccess.dll": {}
+        }
+      },
+      "Article.Log/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "5.0.0"
+        },
+        "runtime": {
+          "Article.Log.dll": {}
+        },
+        "compile": {
+          "Article.Log.dll": {}
         }
       },
       "Article.Repository/1.0.0": {
@@ -3728,6 +3740,11 @@
       "sha512": ""
     },
     "Article.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Article.Log/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

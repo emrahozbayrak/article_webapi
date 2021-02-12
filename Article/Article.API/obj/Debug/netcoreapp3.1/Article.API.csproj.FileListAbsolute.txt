@@ -1,3 +1,8 @@
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.csprojAssemblyReference.cache
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.AssemblyInfoInputs.cache
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.AssemblyInfo.cs
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.csproj.CoreCompileInputs.cache
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.MvcApplicationPartsAssemblyInfo.cache
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.API.exe
@@ -7,6 +12,9 @@ D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Arti
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.API.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.API.pdb
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Humanizer.dll
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -29,6 +37,7 @@ D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Micr
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
@@ -50,17 +59,14 @@ D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\runt
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.Core.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.DataAccess.dll
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.Log.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.Repository.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.Service.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.DataAccess.pdb
+D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.Log.pdb
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.Repository.pdb
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.Service.pdb
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Article.Core.pdb
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.csprojAssemblyReference.cache
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.AssemblyInfoInputs.cache
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.AssemblyInfo.cs
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.csproj.CoreCompileInputs.cache
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.MvcApplicationPartsAssemblyInfo.cache
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\staticwebassets\Article.API.StaticWebAssets.Manifest.cache
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\staticwebassets\Article.API.StaticWebAssets.xml
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\Article.API.styles.css
@@ -69,7 +75,3 @@ D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Arti
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.dll
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.pdb
 D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\obj\Debug\netcoreapp3.1\Article.API.genruntimeconfig.cache
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
-D:\Çalışmalar\WEB\WebApiRepo\Article\Article.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

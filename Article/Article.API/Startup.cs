@@ -2,6 +2,7 @@ using Article.Core.Models;
 using Article.Core.Repositories;
 using Article.Core.Services;
 using Article.DataAccess;
+using Article.Log;
 using Article.Repository;
 using Article.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -40,8 +41,6 @@ namespace Article.API
             {
                 conf.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-
-
 
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IService<>), typeof(GenericService<>));
@@ -93,12 +92,14 @@ namespace Article.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            loggerFactory.AddProvider(new LoggerProvider(env.ContentRootPath));
 
             app.UseHttpsRedirection();
 
