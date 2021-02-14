@@ -9,13 +9,16 @@
     Veritabanı sorgularında kullanılacak temel metotlar IRepository interface'inde tanımlanmıştır.
 
   - Kullandığınız teknoloji ve kütüphaneler hakkında daha önce tecrübeniz oldu mu? Tek tek yazabilir misiniz?  
+  
     . Entity Framework Core ORM kütüphanesi ile DB First veya Code First olarak çalışmış olduğum projelerde geliştirmelerde bulundum.
+    
     . Authentication yapısı için kullanmış olduğum JwtBearer kütüphanesini daha önceki çalışmalarımda aktif olarak kullandım.
       Authentication tipi olarak Bearer Token oluşuturulmaktadır. Bearer Token dışında OAuth 2.0 diğer projelerde kullandım.
      
   - Daha geniş vaktiniz olsaydı projeye neler eklemek isterdiniz? 
-    . Mapper yapısı, 
-    . Özel bir Validation yapısı,
-    . Permission Filter yapısı ile özelleştirilmiş yetkilendirme,
-    . Güçlendirilmiş bir arama için Elastich Search yapısı
+  
+     Mapper yapısı, 
+     Özel bir Validation yapısı,
+     Permission Filter yapısı ile özelleştirilmiş yetkilendirme,
+     Güçlendirilmiş bir arama için Elastich Search yapısı
       projeye eklenebilirler.
