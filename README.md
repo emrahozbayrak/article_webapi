@@ -1,9 +1,11 @@
 # article_webapi
 
 - Projede kullanıdığınız tasarım desenleri hangileridir? Bu desenleri neden kullandınız? 
+
   . Factory Method Design Pattern kullanılarak metotlardan sonuç döndüren SuccessResult ve ErrorResult sınıflarının 
     IResult interface'ine atanarak tek bir IResult tipinde geri dönrülebilmesi sağlanmıştır.SuccessResult ve ErrorResult
     sınıflarının ikisi de Result sınıfından türetilerek çok biçimlilik prensibine de uygunluk sağlanmıştır.
+    
   . Repository Design Pattern ile veritabanı işlerini gerçekleştirecek bir arayüz oluşturulmuştur. Bu sayede
     veri tabanı işlemleri belirlenen Repository katmanında yine belirlenen standartlarla gerçekleştirilmektedir.
     Veritabanı sorgularında kullanılacak temel metotlar IRepository interface'inde tanımlanmıştır.
