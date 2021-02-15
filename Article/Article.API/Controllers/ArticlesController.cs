@@ -21,10 +21,10 @@ namespace Article.API.Controllers
         private readonly IArticleService _articleService;
         private readonly ILogger<ArticlesController> _logger;
         private readonly IMemoryCache _memoryCache;
-        
+
 
         public ArticlesController(IArticleService articleService, ILogger<ArticlesController> logger,
-            IMemoryCache memoryCache) : base(articleService, logger,memoryCache)
+            IMemoryCache memoryCache) : base(articleService, logger, memoryCache)
         {
             _articleService = articleService;
             _logger = logger;
@@ -33,42 +33,62 @@ namespace Article.API.Controllers
 
         // Searching with Article Title
         [HttpGet("getbytitle/{keyword}")]
-        public async Task<IDataResult<IEnumerable<Article.Core.Entities.Article>>> GetAllByTitleAsync(string keyword)
+        public async Task<IActionResult> GetAllByTitleAsync(string keyword)
         {
             var result = await _articleService.GetByTitleAsync(keyword);
+            if (result.Success)
+            {
+                _logger.LogInformation($"{nameof(Article)} Search by Title is success");
+                return Ok(result);
+            }
 
-            _logger.LogInformation($"{nameof(Article)} Search by Title is success");
-            return result;
+            _logger.LogInformation($"{nameof(Article)} Search by Title failed");
+            return BadRequest(result.Message);
         }
 
         // Searching with Author Name
         [HttpGet("getbyauthor/{authorName}")]
-        public async Task<IDataResult<IEnumerable<Article.Core.Entities.Article>>> GetByAuthorAsync(string authorName)
+        public async Task<IActionResult> GetByAuthorAsync(string authorName)
         {
             var result = await _articleService.GetByTitleAsync(authorName);
+            if (result.Success)
+            {
+                _logger.LogInformation($"{nameof(Article)} Search by AuthorName is success");
+                return Ok(result);
+            }
 
-            _logger.LogInformation($"{nameof(Article)} Search by AuthorName is success");
-            return result;
+            _logger.LogInformation($"{nameof(Article)} Search by AuthorName failed");
+            return BadRequest(result.Message);
         }
 
         // Get Data with Comments
         [HttpGet("getwithcomments")]
-        public IDataResult<IEnumerable<Article.Core.Entities.Article>> GetWithComments()
+        public IActionResult GetWithComments()
         {
             var result = _articleService.GetWithComments();
-            _logger.LogInformation($"{nameof(Article)} List with Comments is success");
+            if (result.Success)
+            {
+                _logger.LogInformation($"{nameof(Article)} List with Comments is success");
+                return Ok(result);
+            }
 
-            return result;
+            _logger.LogInformation($"{nameof(Article)} List with Comments failed");
+            return BadRequest(result.Message);
         }
 
         // Get Data By Id with Comments
         [HttpGet("getwithcomments/{id}")]
-        public IDataResult<Article.Core.Entities.Article> GetWithCommentsById(long id)
+        public IActionResult GetWithCommentsById(long id)
         {
             var result = _articleService.GetWithCommentsById(id);
-            _logger.LogInformation($"{nameof(Article)} Search with Comments is success");
+            if (result.Success)
+            {
+                _logger.LogInformation($"{nameof(Article)} Search with Comments is success");
+                return Ok(result);
+            }
 
-            return result;
+            _logger.LogInformation($"{nameof(Article)} Search with Comments failed");
+            return BadRequest(result.Message);
         }
     }
 }

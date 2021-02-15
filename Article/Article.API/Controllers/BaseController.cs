@@ -27,14 +27,14 @@ namespace Article.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IDataResult<IEnumerable<T>>> GetAllAsync()
+        public async Task<IActionResult> GetAllAsync()
         {
             string key = typeof(T).Name;
 
             if (_memoryCache.TryGetValue(key, out object list))
             {
                 _logger.LogInformation($"{nameof(Article)} List from cache is success");
-                return (IDataResult<IEnumerable<T>>)list;
+                return Ok((IDataResult<IEnumerable<T>>)list);
             }
 
 
@@ -44,52 +44,76 @@ namespace Article.API.Controllers
                 AbsoluteExpiration = DateTime.Now.AddMinutes(5),
                 Priority = CacheItemPriority.Normal
             });
-            _logger.LogInformation($"{typeof(T).Name} List is success");
 
-            return result;
+            if (result.Success)
+            {
+                _logger.LogInformation($"{typeof(T).Name} List is success");
+                return Ok(result);
+            }
+
+            _logger.LogInformation($"{typeof(T).Name} List is failed");
+            return BadRequest(result.Message);
         }
 
 
         [HttpGet("{id}")]
-        public IDataResult<T> GetById(long id)
+        public IActionResult GetById(long id)
         {
             var result = _service.GetById(id);
             _logger.LogInformation($"{typeof(T).Name} List is success");
 
-            return result;
+            if (result.Success)
+                return Ok(result);
+
+            _logger.LogInformation($"{typeof(T).Name} List is failed");
+            return BadRequest(result.Message);
         }
 
         [HttpPost]
-        public async Task<IResult> PostAsync(T model)
+        public async Task<IActionResult> PostAsync(T model)
         {
             var result = await _service.InsertAsync(model);
-            _logger.LogInformation($"{typeof(T).Name} Save is success");
+            if (result.Success)
+            {
+                _logger.LogInformation($"{typeof(T).Name} Save is success");
+                RemoveCache(typeof(T).Name);
+                return Ok(result);
+            }
 
-            RemoveCache(typeof(T).Name);
 
-            return result;
+            _logger.LogInformation($"{typeof(T).Name} Save is failed");
+            return BadRequest(result.Message);
         }
 
         [HttpPut]
-        public IResult Put(T model)
+        public IActionResult Put(T model)
         {
             var result = _service.Update(model);
-            _logger.LogInformation($"{typeof(T).Name} Update is success");
+            if (result.Success)
+            {
+                _logger.LogInformation($"{typeof(T).Name} Update is success");
+                RemoveCache(typeof(T).Name);
+                return Ok(result);
+            }
 
-            RemoveCache(typeof(T).Name);
 
-            return result;
+            _logger.LogInformation($"{typeof(T).Name} Update is failed");
+            return BadRequest(result.Message);
         }
 
         [HttpDelete("{id}")]
-        public IResult Delete(long id)
+        public IActionResult Delete(long id)
         {
             var result = _service.Delete(id);
-            _logger.LogInformation($"{typeof(T).Name} Delete is success");
+            if (result.Success)
+            {
+                _logger.LogInformation($"{typeof(T).Name} Delete is success");
+                RemoveCache(typeof(T).Name);
+                return Ok(result);
+            }
 
-            RemoveCache(typeof(T).Name);
-
-            return result;
+            _logger.LogInformation($"{typeof(T).Name} Delete is failed");
+            return BadRequest(result.Message);
         }
 
         [ApiExplorerSettings(IgnoreApi = true)]
