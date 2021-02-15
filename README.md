@@ -22,5 +22,5 @@
      Mapper yapısı, 
      Özel bir Validation yapısı,
      Permission Filter yapısı ile özelleştirilmiş yetkilendirme,
-     Güçlendirilmiş bir arama için Elastich Search yapısı
-      projeye eklenebilirler.
+     Güçlendirilmiş bir arama için Elastich Search yapısı,
+     Validation ve Cache yapısı için Özel Filterlar hazırlanarak Service ve Api katmanında ki kod kalabalığı azaltılabilir.
